@@ -24,10 +24,31 @@ const Table = () => {
 
       console.log('brandData:');
       console.dir(brandData);
-      setBrands(brandData);
 
       console.log('brandLocationData:');
       console.dir(brandLocationData);
+
+      // Solution 1: O(nm)
+      // for brandData
+        // for brandLocation
+          // if (brandData.id === brandLocation.id)
+            // create newItem
+            // newArra.push(newItem);
+
+      // Solution 2: O(n+m)
+      const dict = {};
+      brandLocationData
+        .filter(item => !!item.location)
+        .forEach((item) => {
+          dict[item.id] = item;
+        });
+      const newBrandData = brandData
+        .map((item) => ({
+          ...item,
+          ...dict[item.id],
+        }));
+
+      setBrands(newBrandData);
     });
   };
 

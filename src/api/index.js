@@ -17,7 +17,7 @@ const MOCK_SKATEBOARD_BRAND = [
   },
   {
     id: 5,
-    name: 'Santa Cruz'
+    name: 'Santa Cruz Skateboards'
   },
 ];
 

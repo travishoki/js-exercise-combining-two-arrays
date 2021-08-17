@@ -45,7 +45,7 @@ const Table = () => {
         <tbody>
           {brands.map((item, index) => (
             <tr key={item.id}>
-              <td>{index}</td>
+              <td>{index + 1}</td>
               <td>{item.name}</td>
               <td>{item.location}</td>
             </tr>

@@ -38,7 +38,6 @@ const Table = () => {
       // Solution 2: O(n+m)
       const dict = {};
       brandLocationData
-        .filter(item => !!item.location)
         .forEach((item) => {
           dict[item.id] = item;
         });
